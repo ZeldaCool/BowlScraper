@@ -1,2 +1,2 @@
 # BowlScraper
-A new way to search online. The user specifies a collection of URLs and they're scraped, the user can now quickly search through the website contents.
+A pure python web search engine that uses BowlScraper Web Scraper(Built by yours truly) to search requested websites. The UI is made using textual.
