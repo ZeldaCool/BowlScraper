@@ -24,8 +24,10 @@ def page_scraper():
     if response.ok:
         soup = BeautifulSoup(response.text, 'html.parser')
         raw_text = soup.get_text()
+        print(raw_text)
         raw_text = raw_text.encode("utf-8")
         pretty_soup = soup.prettify()
+        print(pretty_soup)
         pretty_soup = pretty_soup.encode("utf-8")
         if not os.path.exists("indexdir"):
             os.mkdir("indexdir")
@@ -33,6 +35,7 @@ def page_scraper():
         ix = index.open_dir("index")
         writer = ix.writer()    
         writer.add_document(raw_html = pretty_soup, text = raw_text)
+        writer.commit()
 
     else:
         print("Error in getting site!")
